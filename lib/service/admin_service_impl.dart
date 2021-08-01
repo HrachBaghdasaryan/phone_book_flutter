@@ -1,5 +1,6 @@
 
 import 'dart:convert';
+import 'dart:html';
 
 import 'package:dio/dio.dart';
 import 'package:phone_book/di/injector.dart';
@@ -12,6 +13,7 @@ import 'contact_service.dart';
 class AdminServiceImpl extends AdminService {
   final Dio _http = injector<Dio>();
   Codec<String, String> stringToBase64 = utf8.fuse(base64);
+  var baseUrl = window.location.href.substring(0, window.location.href.indexOf("#"));
 
   Future<List<ContactEntityResource>> getList(String name, String token) async {
     if(name.trim() == "" || name.trim().length < 3) {
@@ -21,7 +23,7 @@ class AdminServiceImpl extends AdminService {
       "Content-type": "application/json;charset=UTF-8",
       "authorization": "Basic ${stringToBase64.encode(token)}"
     };
-    final response = await _http.get("http://localhost:8008/api/contact/name/${name.trim()}",
+    final response = await _http.get("${baseUrl}api/contact/name/${name.trim()}",
         options: Options(headers: headers)
     );
     if (response.statusCode == 200) {
@@ -37,7 +39,7 @@ class AdminServiceImpl extends AdminService {
       "Content-type": "application/json;charset=UTF-8",
       "Authorization": "Basic ${stringToBase64.encode(token)}"
     };
-    return _http.post("http://localhost:8008/api/contact",
+    return _http.post("${baseUrl}api/contact",
       options: Options(headers: headers),
       data: jsonEncode(contactResource),
     );
@@ -49,7 +51,7 @@ class AdminServiceImpl extends AdminService {
       "Content-type": "application/json;charset=UTF-8",
       "Authorization": "Basic ${stringToBase64.encode(token)}"
     };
-    return _http.delete("http://localhost:8008/api/contact/$id",
+    return _http.delete("${baseUrl}api/contact/$id",
       options: Options(headers: headers)
     );
 

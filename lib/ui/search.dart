@@ -48,7 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             ),
           ),
-          getElement("Անուն", "Ազգանուն", "Քաղաքային", "Բջջային", "Էլ. հասցե"),
+          getElement("Անուն", "Հայրանուն / Ազգանուն", "Ստորաբաժանում", "Ներքին", "Պաշտոն / Էլ. հասցե"),
           new Expanded(
               child: new ListView.builder(
             itemCount: _searchResult.length,

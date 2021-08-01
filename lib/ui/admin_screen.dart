@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:phone_book/di/injector.dart';
 import 'package:phone_book/model/contact_entity_resource.dart';
@@ -135,10 +137,10 @@ class _AdminPanelState extends State<AdminPanel> {
           ),
           getElement(
               "Անուն",
-              "Ազգանուն",
-              "Քաղաքային",
-              "Բջջային",
-              "Էլ. հասցե",
+              "Հայրանուն / Ազգանուն",
+              "Ստորաբաժանում",
+              "Ներքին",
+              "Պաշտոն / Էլ. հասցե",
               true,
               0),
           Expanded(

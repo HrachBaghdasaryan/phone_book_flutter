@@ -54,28 +54,28 @@ class _CreateContactRequestState extends State<CreateContactRequest> {
               SizedBox(height: 8),
               Card(
                 child: TextField(
-                  decoration: InputDecoration(labelText: 'Ազգանուն'),
+                  decoration: InputDecoration(labelText: 'Հայրանուն / Ազգանուն'),
                   controller: _surname,
                 ),
               ),
               SizedBox(height: 8),
               Card(
                 child: TextField(
-                  decoration: InputDecoration(labelText: 'Բջջային'),
-                  controller: _mobileNumber,
-                ),
-              ),
-              SizedBox(height: 8),
-              Card(
-                child: TextField(
-                  decoration: InputDecoration(labelText: 'Քաղաքային'),
+                  decoration: InputDecoration(labelText: 'Ստորաբաժանում'),
                   controller: _phoneNumber,
                 ),
               ),
               SizedBox(height: 8),
               Card(
                 child: TextField(
-                  decoration: InputDecoration(labelText: 'Էլ. հասցե'),
+                  decoration: InputDecoration(labelText: 'Ներքին'),
+                  controller: _mobileNumber,
+                ),
+              ),
+              SizedBox(height: 8),
+              Card(
+                child: TextField(
+                  decoration: InputDecoration(labelText: 'Պաշտոն / Էլ. հասցե'),
                   controller: _email,
                 ),
               ),
